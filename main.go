@@ -13,4 +13,5 @@ func main(){
 			"msg": "ok",
 		})
 	})
+	app.Run(":3000")
 }
