@@ -1,17 +1,23 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func main(){
+func main() {
+	port := flag.Int("p", 3000, "listening port")
+	flag.Parse()
+
+	gin.SetMode(gin.ReleaseMode)
 	app := gin.Default()
-	app.Any("/", func(c *gin.Context){
+	app.Any("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"msg": "ok",
 		})
 	})
-	app.Run(":3000")
+	app.Run(fmt.Sprintf(":%d", *port))
 }
