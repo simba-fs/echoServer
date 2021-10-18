@@ -19,5 +19,7 @@ func main() {
 			"msg": "ok",
 		})
 	})
-	app.Run(fmt.Sprintf(":%d", *port))
+	if err := app.Run(fmt.Sprintf(":%d", *port)); err != nil {
+		panic(err)
+	}
 }
