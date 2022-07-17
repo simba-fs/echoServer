@@ -1,4 +1,4 @@
-module github.com/simba-fs/echoServer
+module github.com/simbafs/echoServer
 
 go 1.16
 
